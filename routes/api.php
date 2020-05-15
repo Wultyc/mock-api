@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('{endpoint}', 'MockResourceController@get')->where('endpoint', '(.*)');
+Route::post('{endpoint}', 'MockResourceController@post')->where('endpoint', '(.*)');
+Route::put('{endpoint}', 'MockResourceController@put')->where('endpoint', '(.*)');
+Route::delete('{endpoint}', 'MockResourceController@delete')->where('endpoint', '(.*)');
