@@ -11,11 +11,17 @@ class MockResourceController extends Controller
 
     }
 
-    public function post($endpoint){
+    public function post($endpoint, Request $request){
+        $mockedRequest = Mock::create([
+            'endpoint' => $endpoint,
+            'query' => json_encode($request-> query()),
+            'payload' => json_encode($request-> post())
+        ]);
 
+        //$mockedRequest->save();
     }
 
-    public function put($endpoint){
+    public function put($endpoint, Request $request){
 
     }
     
