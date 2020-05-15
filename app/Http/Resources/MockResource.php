@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class mock-resource extends JsonResource
+class MockResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
