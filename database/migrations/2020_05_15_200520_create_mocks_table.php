@@ -15,7 +15,7 @@ class CreateMocksTable extends Migration
     {
         Schema::create('mocks', function (Blueprint $table) {
             $table->id();
-            $table->string("endpoint");
+            $table->string("endpoint")->unique();
             $table->text("response");
             $table->timeStamps();
             $table->softDeletes();
