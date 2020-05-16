@@ -23,7 +23,13 @@ class MockResourceController extends Controller
     }
 
     public function put($endpoint, Request $request){
+        $requestedMock = Mock::where('endpoint', $endpoint)->first();
 
+        $requestedMock->query = json_encode($request->query());
+        $requestedMock->payload = json_encode($request->post());
+        
+        if($requestedMock->isDirty())
+            $requestedMock->save();
     }
     
     public function delete($endpoint){
