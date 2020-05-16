@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "6897a653-c41f-405b-9bf2-a6687d93e976",
+		"name": "Mock API",
+		"description": "Requests made to test Mocking service made with Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Management",
+			"item": [
+				{
+					"name": "List All APIs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mock-api.url}}/api/mgmt/",
+							"host": [
+								"{{mock-api.url}}"
+							],
+							"path": [
+								"api",
+								"mgmt",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore DB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"endpoint\": \"test/endpoint\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World :)\\\"}\",\r\n        \"created_at\": \"2020-05-15T23:53:57.000000Z\",\r\n        \"updated_at\": \"2020-05-16T11:52:43.000000Z\",\r\n        \"deleted_at\": \"2020-05-16T11:52:43.000000Z\"\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V2\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V3\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V4\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mock-api.url}}/api/mgmt/",
+							"host": [
+								"{{mock-api.url}}"
+							],
+							"path": [
+								"api",
+								"mgmt",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GET Example w/ Query String",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"Hello World\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint?queryParam=testParam&2ndParam=moreTst",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint"
+					],
+					"query": [
+						{
+							"key": "queryParam",
+							"value": "testParam"
+						},
+						{
+							"key": "2ndParam",
+							"value": "moreTst"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Example w/o Query String",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Example",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"Hello World\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint/",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint",
+						""
+					]
+				},
+				"description": "Make a post example"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Example",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"Hello World :)\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint/",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Example",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint/",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Example",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE  w/ Explicit Soft Delete Example",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint?MockAPiForceDelete=false",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint"
+					],
+					"query": [
+						{
+							"key": "MockAPiForceDelete",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE  w/ Explicit Froce Delete Example",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{mock-api.url}}/api/test/endpoint?MockAPiForceDelete=true",
+					"host": [
+						"{{mock-api.url}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"endpoint"
+					],
+					"query": [
+						{
+							"key": "MockAPiForceDelete",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
