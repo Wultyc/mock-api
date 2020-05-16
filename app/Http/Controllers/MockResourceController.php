@@ -58,7 +58,7 @@ class MockResourceController extends Controller
     
     public function delete($endpoint, Request $request){
         $requestQuery = $request->query();
-        $requestedMock = Mock::where('endpoint', $endpoint)->first();
+        $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
 
         if(is_null($requestedMock))
             return abort(404);
