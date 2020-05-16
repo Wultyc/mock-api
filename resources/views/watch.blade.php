@@ -53,6 +53,7 @@
                 </div>
             </div>
         </form>
+        <button class="btn btn-sm btn-primary" onclick="location.href='{{route('mocks')}}';">Return</button>
     </div>
 </div>
 
