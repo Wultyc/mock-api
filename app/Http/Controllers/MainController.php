@@ -17,7 +17,7 @@ class MainController extends Controller
 
     public function mocks()
     {
-        # code...
+        return view('mocks');
     }
 
     public function management()

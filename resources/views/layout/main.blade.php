@@ -3,6 +3,7 @@
 
 <head>
     @include('layout.partials.head')
+    @yield('custom_css')
 </head>
 
 <body>
@@ -20,6 +21,7 @@
 
     <!--scripts-->
     @include('layout.partials.scripts')
+    @yield('custom_js')
 
 </body>
 
