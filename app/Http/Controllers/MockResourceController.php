@@ -8,7 +8,8 @@ use App\Models\Mock;
 class MockResourceController extends Controller
 {
     public function get($endpoint){
-
+        $requestedMock = Mock::where('endpoint', $endpoint)->first();
+        echo $requestedMock->payload;
     }
 
     public function post($endpoint, Request $request){
