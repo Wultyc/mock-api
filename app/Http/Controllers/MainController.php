@@ -19,9 +19,4 @@ class MainController extends Controller
     {
         return view('mocks');
     }
-
-    public function management()
-    {
-        # code...
-    }
 }

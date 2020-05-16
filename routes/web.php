@@ -16,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MainController@index')->name('home');
 Route::get('/HowToUse', 'MainController@howToUse')->name('howToUse');
 Route::get('/Mocks', 'MainController@mocks')->name('mocks');
-Route::get('/Management', 'MainController@managment')->name('management');
 
 
