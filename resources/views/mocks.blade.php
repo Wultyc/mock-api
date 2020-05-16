@@ -52,7 +52,6 @@
 
     function show_api_list(apilist) {
         document.getElementById("loader").remove();
-        document.getElementById("apis_list").style.display = "";
         apilist.forEach(function(element) {
             let apis_list = document.getElementById("apis_list");
 
@@ -69,8 +68,7 @@
             endpoint_col.classList.add("col-md-11")
 
             let endpoint_link = document.createElement("a");
-            endpoint_link.setAttribute('href', '/api/'+element.endpoint);
-            endpoint_link.setAttribute('target', '_blank');
+            endpoint_link.setAttribute('href', '/Mocks/Watch/'+element.endpoint);
             endpoint_link.innerHTML = element.endpoint;
 
             if (element.deleted_at == null) {
