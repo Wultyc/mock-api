@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix'=>'mgmt'], function() {
     Route::get('', 'MockManagementController@list')->where('endpoint', '(.*)');
-    Route::post('', 'MockManagementController@list')->where('endpoint', '(.*)');
+    Route::post('', 'MockManagementController@insert')->where('endpoint', '(.*)');
 });
 
 Route::get('{endpoint}', 'MockResourceController@get')->where('endpoint', '(.*)');
