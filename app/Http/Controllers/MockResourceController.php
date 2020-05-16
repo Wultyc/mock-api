@@ -34,6 +34,15 @@ class MockResourceController extends Controller
         if($requestedMock->save())
             return new MockResource($requestedMock);
     }
+
+    public function patch($endpoint){
+        $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
+
+        $requestedMock->deleted_at = null;
+        
+        if($requestedMock->save())
+            return new MockResource($requestedMock);
+    }
     
     public function delete($endpoint){
         $requestedMock = Mock::where('endpoint', $endpoint)->first();

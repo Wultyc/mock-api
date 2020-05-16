@@ -21,4 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('{endpoint}', 'MockResourceController@get')->where('endpoint', '(.*)');
 Route::post('{endpoint}', 'MockResourceController@post')->where('endpoint', '(.*)');
 Route::put('{endpoint}', 'MockResourceController@put')->where('endpoint', '(.*)');
+Route::patch('{endpoint}', 'MockResourceController@patch')->where('endpoint', '(.*)');
 Route::delete('{endpoint}', 'MockResourceController@delete')->where('endpoint', '(.*)');
