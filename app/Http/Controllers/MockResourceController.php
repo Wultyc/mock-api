@@ -4,22 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mock;
+use App\Http\Resources\MockResource;
 
 class MockResourceController extends Controller
 {
     public function get($endpoint){
         $requestedMock = Mock::where('endpoint', $endpoint)->first();
-        echo $requestedMock->payload;
+        return new MockResource($requestedMock);
     }
 
     public function post($endpoint, Request $request){
-        $mockedRequest = Mock::create([
-            'endpoint' => $endpoint,
-            'query' => json_encode($request-> query()),
-            'payload' => json_encode($request-> post())
-        ]);
+        $mockedRequest = new Mock;
 
-        //$mockedRequest->save();
+        $mockedRequest->endpoint = $endpoint;
+        $mockedRequest->query = json_encode($request-> query());
+        $mockedRequest->payload = json_encode($request-> post());
+        
+
+        if($mockedRequest->save())
+            return new MockResource($mockedRequest);
     }
 
     public function put($endpoint, Request $request){
@@ -28,8 +31,8 @@ class MockResourceController extends Controller
         $requestedMock->query = json_encode($request->query());
         $requestedMock->payload = json_encode($request->post());
         
-        if($requestedMock->isDirty())
-            $requestedMock->save();
+        if($requestedMock->save())
+            return new MockResource($requestedMock);
     }
     
     public function delete($endpoint){
