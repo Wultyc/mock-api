@@ -33,6 +33,7 @@ class MockResourceController extends Controller
     }
     
     public function delete($endpoint){
-
+        $requestedMock = Mock::where('endpoint', $endpoint)->first();
+        $requestedMock->delete();
     }
 }
