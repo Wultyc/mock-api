@@ -44,8 +44,14 @@ class MockResourceController extends Controller
             return new MockResource($requestedMock);
     }
     
-    public function delete($endpoint){
+    public function delete($endpoint, Request $request){
+        $requestQuery = $request->query();
         $requestedMock = Mock::where('endpoint', $endpoint)->first();
-        $requestedMock->delete();
+        
+        if(array_key_exists('MockAPiForceDelete', $requestQuery) && $requestQuery['MockAPiForceDelete'] == 'true'){
+            $requestedMock->forceDelete();
+        } else {
+            $requestedMock->delete();
+        }
     }
 }
