@@ -12,7 +12,7 @@ class MainController extends Controller
 
     public function howToUse()
     {
-        # code...
+        return view('howToUse');
     }
 
     public function mocks()
