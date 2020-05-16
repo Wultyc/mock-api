@@ -13,6 +13,13 @@
     <style>
         html {
             font-size: 14px;
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 60px;
+            /* Margin bottom by footer height */
         }
 
         @media (min-width: 768px) {
@@ -43,6 +50,17 @@
 
         .box-shadow {
             box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            /* Set the fixed height of the footer here */
+            line-height: 60px;
+            /* Vertically center the text there */
+            background-color: #f5f5f5;
         }
     </style>
 </head>

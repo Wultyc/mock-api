@@ -14,7 +14,7 @@
         @yield('content')
     </div>
     <!--footer-->
-    <footer>
+    <footer class="footer">
         @include('layout.partials.footer')
     </footer>
 
