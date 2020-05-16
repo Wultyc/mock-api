@@ -73,10 +73,10 @@
 
             if (element.deleted_at == null) {
                 btn.classList.add("btn-outline-success");
-                btn.innerHTML = "Available";
+                btn.innerHTML = "Active";
             } else {
                 btn.classList.add("btn-outline-secondary");
-                btn.innerHTML = "Disabled";
+                btn.innerHTML = "Inactive";
             }
 
             btn_col.appendChild(btn);
