@@ -14,6 +14,7 @@ class MockResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        //return parent::toArray($request);
+        return json_decode($this->payload);
     }
 }
