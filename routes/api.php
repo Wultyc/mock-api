@@ -18,6 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['prefix'=>'mgmt'], function() {
+    Route::get('', 'MockManagementController@list')->where('endpoint', '(.*)');
+    Route::post('', 'MockManagementController@list')->where('endpoint', '(.*)');
+});
+
 Route::get('{endpoint}', 'MockResourceController@get')->where('endpoint', '(.*)');
 Route::post('{endpoint}', 'MockResourceController@post')->where('endpoint', '(.*)');
 Route::put('{endpoint}', 'MockResourceController@put')->where('endpoint', '(.*)');
