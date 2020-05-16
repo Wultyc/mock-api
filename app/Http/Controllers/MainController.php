@@ -9,4 +9,19 @@ class MainController extends Controller
     public function index() {
         return view('welcome');
     }
+
+    public function howToUse()
+    {
+        # code...
+    }
+
+    public function mocks()
+    {
+        # code...
+    }
+
+    public function management()
+    {
+        # code...
+    }
 }

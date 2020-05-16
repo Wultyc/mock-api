@@ -1,4 +1,4 @@
-<a class="p-2 text-dark" href="/">Home</a>
-<a class="p-2 text-dark" href="#">How to use</a>
-<a class="p-2 text-dark" href="#">Mocks</a>
-<a class="p-2 text-dark" href="#">Management</a>
+<a class="p-2 text-dark" href="{{route('home')}}">Home</a>
+<a class="p-2 text-dark" href="{{route('howToUse')}}">How to use</a>
+<a class="p-2 text-dark" href="{{route('mocks')}}">Mocks</a>
+<a class="p-2 text-dark" href="{{route('management')}}">Management</a>
