@@ -63,7 +63,9 @@
             <button type="button" class="btn btn-outline-success btn-sm">GET</button>
         </div>
         <div class="col-md-11">
-            Print all available endpoints with the respective query strings and payloads.
+            Print all available endpoints with the respective query strings and payloads.<br>
+            To get all details from a single endpoint, send a request following the structure <code>/api/mgmt/{endpoint}</code>.<br>
+            <strong>Example:</strong> <code>/api/mgmt/tstEndpoint</code></p>
         </div>
     </div>
     <div class="row mt-3">
