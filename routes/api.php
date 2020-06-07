@@ -19,12 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix'=>'mgmt'], function() {
-    Route::get('', 'MockManagementController@list')->where('endpoint', '(.*)');
-    Route::post('', 'MockManagementController@insert')->where('endpoint', '(.*)');
+    Route::get('', 'APIs\MockManagementController@list')->where('endpoint', '(.*)');
+    Route::post('', 'APIs\MockManagementController@insert')->where('endpoint', '(.*)');
 });
 
-Route::get('{endpoint}', 'MockResourceController@get')->where('endpoint', '(.*)');
-Route::post('{endpoint}', 'MockResourceController@post')->where('endpoint', '(.*)');
-Route::put('{endpoint}', 'MockResourceController@put')->where('endpoint', '(.*)');
-Route::patch('{endpoint}', 'MockResourceController@patch')->where('endpoint', '(.*)');
-Route::delete('{endpoint}', 'MockResourceController@delete')->where('endpoint', '(.*)');
+Route::get('{endpoint}', 'APIs\MockResourceController@get')->where('endpoint', '(.*)');
+Route::post('{endpoint}', 'APIs\MockResourceController@post')->where('endpoint', '(.*)');
+Route::put('{endpoint}', 'APIs\MockResourceController@put')->where('endpoint', '(.*)');
+Route::patch('{endpoint}', 'APIs\MockResourceController@patch')->where('endpoint', '(.*)');
+Route::delete('{endpoint}', 'APIs\MockResourceController@delete')->where('endpoint', '(.*)');
