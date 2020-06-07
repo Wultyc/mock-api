@@ -29,6 +29,26 @@
 					"response": []
 				},
 				{
+					"name": "List Endpoint Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mock-api.url}}/api/mgmt/test/endpoint",
+							"host": [
+								"{{mock-api.url}}"
+							],
+							"path": [
+								"api",
+								"mgmt",
+								"test",
+								"endpoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Restore DB",
 					"request": {
 						"method": "POST",
