@@ -112,6 +112,22 @@ class Mock extends Model
     }
 
     /**
+     * List Endpoint details
+     *
+     * @param String $endpoint
+     * @param Request $request
+     * @return array|boolean $requestedMock 
+     */
+    public static function listEndpointDetails(String $endpoint, Request $request)
+    {
+        $requestedMock = new Mock;
+
+        $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
+
+        return $requestedMock; 
+    }
+
+    /**
      * Stores many endpoints at once
      *
      * @param Request $request

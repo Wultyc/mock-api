@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class MockManagementList extends JsonResource
+class MockManagementDetails extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,7 +21,7 @@ class MockManagementList extends JsonResource
             "payload" => $this->payload,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
-            "deleted_at" => $this->deleted_at,
+            "deleted_at" => $this->deleted_at
         ];
     }
 }
