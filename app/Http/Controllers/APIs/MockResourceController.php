@@ -16,58 +16,38 @@ class MockResourceController extends Controller
     }
 
     public function post($endpoint, Request $request){
-        $mockedRequest = new Mock;
+        $mockedRequest = Mock::createEndpoint($endpoint, $request);
 
-        $mockedRequest->endpoint = $endpoint;
-        $mockedRequest->query = json_encode($request->query());
-        $mockedRequest->payload = json_encode($request->post());
-        
-
-        try{
-            if($mockedRequest->save())
-                return new MockResource($mockedRequest);
-        } catch(QueryException $e) {
+        if($mockedRequest){
+            return new MockResource($mockedRequest);
+        } else {
             abort(403);
         }
-        
+      
     }
 
     public function put($endpoint, Request $request){
-        $requestedMock = Mock::where('endpoint', $endpoint)->first();
+        $mockedRequest = Mock::updateEndpoint($endpoint, $request);
 
-        if(is_null($requestedMock))
-            return abort(404);
-
-        $requestedMock->query = json_encode($request->query());
-        $requestedMock->payload = json_encode($request->post());
-        
-        if($requestedMock->save())
-            return new MockResource($requestedMock);
+        if($mockedRequest){
+            return new MockResource($mockedRequest);
+        } else {
+            abort(404);
+        }
     }
 
     public function patch($endpoint){
-        $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
+        $mockedRequest = Mock::enableEndpoint($endpoint);
 
-        if(is_null($requestedMock))
-            return abort(404);
-
-        $requestedMock->deleted_at = null;
-        
-        if($requestedMock->save())
-            return new MockResource($requestedMock);
+        if($mockedRequest){
+            return new MockResource($mockedRequest);
+        } else {
+            abort(404);
+        }
     }
     
     public function delete($endpoint, Request $request){
-        $requestQuery = $request->query();
-        $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
-
-        if(is_null($requestedMock))
-            return abort(404);
-        
-        if(array_key_exists('MockAPiForceDelete', $requestQuery) && $requestQuery['MockAPiForceDelete'] == 'true'){
-            $requestedMock->forceDelete();
-        } else {
-            $requestedMock->delete();
-        }
+        $result = Mock::deleteEndpoint($endpoint, $request);
+        !$result ? abort(404) : null;
     }
 }
