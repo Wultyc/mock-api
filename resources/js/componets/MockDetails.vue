@@ -102,7 +102,7 @@ export default {
 
     setURI: function() {
       let pathname = document.location.pathname;
-      pathname = pathname.replace("/Mocks/Watch/", "");
+      pathname = pathname.replace("/mocks/watch/", "");
       this.uri = "/api/mgmt/" + pathname;
     },
 

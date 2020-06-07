@@ -14,7 +14,7 @@
         <button class="btn btn-sm btn-outline-secondary" v-else>Inactive</button>
       </div>
       <div class="col-md-11">
-        <a v-bind:href="'/Mocks/Watch/' + item.endpoint">{{item.endpoint}}</a>
+        <a v-bind:href="'/mocks/watch/' + item.endpoint">{{item.endpoint}}</a>
       </div>
     </div>
   </div>

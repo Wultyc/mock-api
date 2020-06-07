@@ -2006,7 +2006,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     setURI: function setURI() {
       var pathname = document.location.pathname;
-      pathname = pathname.replace("/Mocks/Watch/", "");
+      pathname = pathname.replace("/mocks/watch/", "");
       this.uri = "/api/mgmt/" + pathname;
     },
     riseError: function riseError(error) {
@@ -19966,7 +19966,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-11" }, [
-              _c("a", { attrs: { href: "/Mocks/Watch/" + item.endpoint } }, [
+              _c("a", { attrs: { href: "/mocks/watch/" + item.endpoint } }, [
                 _vm._v(_vm._s(item.endpoint))
               ])
             ])
