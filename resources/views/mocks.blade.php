@@ -47,7 +47,7 @@
     fetchPromise.then(response => {
         return response.json();
     }).then(api_list => {
-        show_api_list(api_list);
+        show_api_list(api_list.data);
     });
 
     function show_api_list(apilist) {
