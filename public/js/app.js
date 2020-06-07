@@ -19749,19 +19749,25 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.details.enabled,
-                    expression: "details.enabled"
+                    value: _vm.details.enabled ? "Active" : "Inactive",
+                    expression: "details.enabled ? 'Active' : 'Inactive'"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text", disabled: "" },
-                domProps: { value: _vm.details.enabled },
+                domProps: {
+                  value: _vm.details.enabled ? "Active" : "Inactive"
+                },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.details, "enabled", $event.target.value)
+                    _vm.$set(
+                      _vm.details,
+                      "enabled ? 'Active' : 'Inactive'",
+                      $event.target.value
+                    )
                   }
                 }
               })

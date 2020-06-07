@@ -19,7 +19,7 @@
         <div class="col-md-6">
           <div class="mb-3">
             <label for="address">Status</label>
-            <input type="text" class="form-control" disabled v-model="details.enabled" />
+            <input type="text" class="form-control" disabled v-model="details.enabled ? 'Active' : 'Inactive'" />
           </div>
         </div>
       </div>
