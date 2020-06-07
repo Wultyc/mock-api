@@ -24,7 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //Remove Wrapping on resources
-        JsonResource::withoutWrapping();
+        
     }
 }

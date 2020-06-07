@@ -14,6 +14,9 @@ class MockResource extends JsonResource
      */
     public function toArray($request)
     {
+        //Remove Wrapping on resources
+        JsonResource::withoutWrapping();
+        
         //return parent::toArray($request);
         return json_decode($this->payload);
     }
