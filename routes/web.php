@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MainController@index')->name('home');
-Route::get('/HowToUse', 'MainController@howToUse')->name('howToUse');
-Route::get('/Mocks', 'MainController@mocks')->name('mocks');
+Route::view('/', 'welcome')->name('home');
+Route::view('/HowToUse', 'howToUse')->name('howToUse');
+Route::view('/Mocks', 'mocks')->name('mocks');
 Route::get('/Mocks/Watch/{endpoint}', 'MainController@watch')->where('endpoint', '(.*)')->name('watch');
 
 
