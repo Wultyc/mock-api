@@ -28,7 +28,7 @@ COPY .env /var/www/mockapi/.env
 # Install app dependencies
 RUN /etc/init.d/mysql restart; cd /var/www/mockapi; composer install; php artisan key:generate; php artisan migrate:fresh
 
-#expose ports on host
+# Expose ports on host
 EXPOSE 8080:80
 
 ENTRYPOINT /etc/init.d/mysql start; /etc/init.d/apache2 start; bash
