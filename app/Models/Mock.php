@@ -15,6 +15,19 @@ class Mock extends Model
 
     const FULL_DELETED = "Full Deleted";
     const SOFT_DELETED = "Soft Deleted";
+/**
+     * Get endpoint data
+     *
+     * @param String $endpoint
+     * @param Request $request
+     * @return array|boolean $mock 
+     */
+    public static function getEndpoint(String $endpoint)
+    {
+        $endpoint = Mock::sanitizeEndpoint($endpoint);
+        $requestedMock = Mock::where('endpoint', $endpoint)->first();
+        return $requestedMock; 
+    }
 
     /**
      * Create a new Endpoint
@@ -27,7 +40,7 @@ class Mock extends Model
     {
         $mock = new Mock;
 
-        $mock->endpoint = $endpoint;
+        $mock->endpoint = Mock::sanitizeEndpoint($endpoint);
         $mock->query = json_encode($request->query());
         $mock->payload = json_encode($request->post());
 
@@ -49,6 +62,8 @@ class Mock extends Model
      */
     public static function updateEndpoint(String $endpoint, Request $request)
     {
+        $endpoint = Mock::sanitizeEndpoint($endpoint);
+
         $requestedMock = Mock::where('endpoint', $endpoint)->first();
 
         if(is_null($requestedMock))
@@ -71,6 +86,8 @@ class Mock extends Model
      */
     public static function enableEndpoint(String $endpoint)
     {
+        $endpoint = Mock::sanitizeEndpoint($endpoint);
+
         $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
 
         if(is_null($requestedMock))
@@ -93,6 +110,8 @@ class Mock extends Model
      */
     public static function deleteEndpoint(String $endpoint, Request $request)
     {
+        $endpoint = Mock::sanitizeEndpoint($endpoint);
+
         $deleteType = null;
         $requestQuery = $request->query();
         $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
@@ -120,6 +139,8 @@ class Mock extends Model
      */
     public static function listEndpointDetails(String $endpoint, Request $request)
     {
+        $endpoint = Mock::sanitizeEndpoint($endpoint);
+
         $requestedMock = new Mock;
 
         $requestedMock = Mock::withTrashed()->where('endpoint', $endpoint)->first();
@@ -142,7 +163,7 @@ class Mock extends Model
         foreach ($mocks as $mock) {
             $mock_obj = new Mock;
 
-            $mock_obj->endpoint = $mock['endpoint'];
+            $mock_obj->endpoint = Mock::sanitizeEndpoint($mock['endpoint']);;
             $mock_obj->query = $mock['query'];
             $mock_obj->payload = $mock['payload'];
 
@@ -156,5 +177,18 @@ class Mock extends Model
             array_push($reportArray, array('endpoint' => $mock['endpoint'], 'status' => $status));
         }
         return $reportArray;
+    }
+
+    /**
+     * Sanitize Endpoint to avoid ending with /
+     *
+     * @param String $endpoint
+     * @return array $sanitezedEndpoint
+     */
+    public static function sanitizeEndpoint(String $endpoint)
+    {
+        $sanitezedEndpoint = (substr($endpoint,-1) == '/') ? substr($endpoint, 0, -1) : $endpoint;
+        $sanitezedEndpoint = strtolower($sanitezedEndpoint);
+        return $sanitezedEndpoint;
     }
 }
