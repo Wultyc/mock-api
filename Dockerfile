@@ -45,4 +45,4 @@ RUN /etc/init.d/mysql restart;\
 # Expose ports on host
 EXPOSE 8080:80
 
-ENTRYPOINT /etc/init.d/mysql start; /etc/init.d/apache2 start; bash
+ENTRYPOINT service apache2 start; service mysql start; bash;
