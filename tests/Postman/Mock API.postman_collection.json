@@ -15,14 +15,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{mock-api.url}}/api/mgmt/",
+							"raw": "{{mock-api.url}}/api/mgmt",
 							"host": [
 								"{{mock-api.url}}"
 							],
 							"path": [
 								"api",
-								"mgmt",
-								""
+								"mgmt"
 							]
 						}
 					},
@@ -55,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n    {\r\n        \"endpoint\": \"test/endpoint\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World :)\\\"}\",\r\n        \"created_at\": \"2020-05-15T23:53:57.000000Z\",\r\n        \"updated_at\": \"2020-05-16T11:52:43.000000Z\",\r\n        \"deleted_at\": \"2020-05-16T11:52:43.000000Z\"\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V2\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V3\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V4\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    }\r\n]",
+							"raw": "[\r\n    {\r\n        \"endpoint\": \"test/endpoint\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World :)\\\"}\",\r\n        \"created_at\": \"2020-05-15T23:53:57.000000Z\",\r\n        \"updated_at\": \"2020-05-16T11:52:43.000000Z\",\r\n        \"deleted_at\": \"2020-05-16T11:52:43.000000Z\"\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V2\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V3\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V4\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    },\r\n    {\r\n        \"endpoint\": \"test/endpoint/V5/\",\r\n        \"query\": \"[]\",\r\n        \"payload\": \"{\\\"message\\\":\\\"Hello World\\\"}\",\r\n        \"created_at\": \"2020-05-16T11:18:46.000000Z\",\r\n        \"updated_at\": \"2020-05-16T13:29:13.000000Z\",\r\n        \"deleted_at\": null\r\n    }\r\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -63,14 +62,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{mock-api.url}}/api/mgmt/",
+							"raw": "{{mock-api.url}}/api/mgmt",
 							"host": [
 								"{{mock-api.url}}"
 							],
 							"path": [
 								"api",
-								"mgmt",
-								""
+								"mgmt"
 							]
 						}
 					},
@@ -154,15 +152,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{mock-api.url}}/api/test/endpoint/",
+					"raw": "{{mock-api.url}}/api/test/endpoint",
 					"host": [
 						"{{mock-api.url}}"
 					],
 					"path": [
 						"api",
 						"test",
-						"endpoint",
-						""
+						"endpoint"
 					]
 				},
 				"description": "Make a post example"
@@ -184,15 +181,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{mock-api.url}}/api/test/endpoint/",
+					"raw": "{{mock-api.url}}/api/test/endpoint",
 					"host": [
 						"{{mock-api.url}}"
 					],
 					"path": [
 						"api",
 						"test",
-						"endpoint",
-						""
+						"endpoint"
 					]
 				}
 			},
@@ -204,15 +200,14 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{mock-api.url}}/api/test/endpoint/",
+					"raw": "{{mock-api.url}}/api/test/endpoint",
 					"host": [
 						"{{mock-api.url}}"
 					],
 					"path": [
 						"api",
 						"test",
-						"endpoint",
-						""
+						"endpoint"
 					]
 				}
 			},
