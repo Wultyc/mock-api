@@ -11,7 +11,7 @@ use App\Http\Resources\MockResource;
 class MockResourceController extends Controller
 {
     public function get($endpoint){
-        $requestedMock = Mock::where('endpoint', $endpoint)->first();
+        $requestedMock = Mock::getEndpoint($endpoint);
         return (!is_null($requestedMock)) ? new MockResource($requestedMock) : abort(404);
     }
 
