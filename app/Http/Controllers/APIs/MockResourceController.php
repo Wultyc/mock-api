@@ -48,6 +48,7 @@ class MockResourceController extends Controller
     
     public function delete($endpoint, Request $request){
         $result = Mock::deleteEndpoint($endpoint, $request);
-        !$result ? abort(404) : null;
+        if ($result != Mock::SOFT_DELETED && $result != Mock::FULL_DELETED) abort(404);
+        return $result;
     }
 }
