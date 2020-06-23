@@ -1,5 +1,5 @@
 # Mock API
-A mocking service made with Laravel
+A mocking service made with Laravel Vue.JS and MariaDB
 
 ## Author
 J. Gabriel Azevedo aka Wultyc
