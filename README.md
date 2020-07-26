@@ -8,7 +8,7 @@ J. Gabriel Azevedo aka Wultyc
 https://jgabriel.eu/project/mock-api/
 
 ## Project Docs
-https://docs.jgabriel.eu/docs/projetos-pessoais/mock-api/
+https://notebook.jgabriel.eu/docs/personal-projects/mock-api/
 
 ## Github repository
 https://github.com/wultyc/mock-api
